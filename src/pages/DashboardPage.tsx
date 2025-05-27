@@ -12,6 +12,7 @@ enum OnboardingStatus {
   COMPLETED = "COMPLETED"
 }
 
+
 export const DashboardPage = () => {
   const { session } = useSession();
   const navigate = useNavigate();
