@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage.tsx";
-import ProtectedPage from "../pages/ProtectedPage.tsx";
+import DashboardPage from "../pages/DashboardPage.tsx";
+import OnboardingPage from "../pages/OnboardingPage.tsx";
+import DevUtilsPage from "../pages/DevUtilsPage.tsx";
 import NotFoundPage from "../pages/404Page.tsx";
-import AuthProtectedRoute from "./AuthProtectedRoute.tsx";
+import AuthDashboardRoute from "../router/AuthDashboardRoute.tsx";
 import Providers from "../Providers.tsx";
 import { AuthPage } from "@/pages/AuthPage.tsx";
 
@@ -21,14 +23,23 @@ const router = createBrowserRouter([
         path: "/auth",
         element: <AuthPage />,
       },
-      // Auth Protected routes
+      // Development utilities (only in development)
+      ...(import.meta.env.DEV ? [{
+        path: "/dev-utils",
+        element: <DevUtilsPage />,
+      }] : []),
+      // Auth dashboard routes
       {
         path: "/",
-        element: <AuthProtectedRoute />,
+        element: <AuthDashboardRoute />,
         children: [
           {
-            path: "/protected",
-            element: <ProtectedPage />,
+            path: "/dashboard",
+            element: <DashboardPage />,
+          },
+          {
+            path: "/onboarding",
+            element: <OnboardingPage />,
           },
         ],
       },

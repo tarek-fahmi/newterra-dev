@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/app-sidebar";
 import { Outlet } from "react-router-dom";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "@/components/ui/separator";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -17,11 +17,13 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const AuthProtectedRoute = () => {
+const AuthDashboardRoute = () => {
   const { session } = useSession();
+
   if (!session) {
     return <NotFoundPage />;
   }
+
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -33,12 +35,12 @@ const AuthProtectedRoute = () => {
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
                 <BreadcrumbLink href="#">
-                  Building Your Application
+                  NewTerra Services
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                <BreadcrumbPage>Dashboard</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -49,4 +51,4 @@ const AuthProtectedRoute = () => {
   );
 };
 
-export default AuthProtectedRoute;
+export default AuthDashboardRoute;

@@ -1,5 +1,5 @@
 <p align="center">
-<h1 align="center">React Supabase ShadCN Auth with Protected Routes</h1>
+<h1 align="center">React Supabase ShadCN Auth with Dashboard Routes</h1>
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
 
 ## Features
 
-- 🚀 Protected Routes
+- 🚀 Dashboard Routes
 - 🚀 Supabase Session Object in Global Context via `useSession`
 - 🚀 User Authentication
 - 🚀 Routing and Route Guards

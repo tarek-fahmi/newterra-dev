@@ -2,18 +2,19 @@ import {
   ArrowUpCircleIcon,
   BarChartIcon,
   CameraIcon,
-  ClipboardListIcon,
+  //ClipboardListIcon,
   DatabaseIcon,
   FileCodeIcon,
-  FileIcon,
+  //FileIcon,
   FileTextIcon,
-  FolderIcon,
+  //FolderIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
   ListIcon,
-  SearchIcon,
+  //SearchIcon,
   SettingsIcon,
   UsersIcon,
+  WrenchIcon,
 } from "lucide-react";
 
 import { NavDocuments } from "@/components/layout/nav-documents";
@@ -32,19 +33,19 @@ import {
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Woodsy",
+    email: "external@newterra.com.au",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: LayoutDashboardIcon,
     },
     {
-      title: "Lifecycle",
-      url: "#",
+      title: "Onboarding",
+      url: "/onboarding",
       icon: ListIcon,
     },
     {
@@ -53,12 +54,7 @@ const data = {
       icon: BarChartIcon,
     },
     {
-      title: "Projects",
-      url: "#",
-      icon: FolderIcon,
-    },
-    {
-      title: "Team",
+      title: "Your NewTerra Team",
       url: "#",
       icon: UsersIcon,
     },
@@ -122,28 +118,19 @@ const data = {
       url: "#",
       icon: HelpCircleIcon,
     },
-    {
-      title: "Search",
-      url: "#",
-      icon: SearchIcon,
-    },
+    // Add dev utilities link only in development
+    ...(import.meta.env.DEV ? [{
+      title: "Dev Utils",
+      url: "/dev-utils",
+      icon: WrenchIcon,
+    }] : [])
   ],
   documents: [
     {
       name: "Data Library",
       url: "#",
       icon: DatabaseIcon,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: ClipboardListIcon,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: FileIcon,
-    },
+    }
   ],
 };
 
@@ -157,9 +144,9 @@ export function AppSidebar() {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5 "
             >
-              <a href="#">
+              <a href="/">
                 <ArrowUpCircleIcon className="h-5 w-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">NewTerra Services</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

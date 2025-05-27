@@ -67,7 +67,7 @@ export function AuthPage() {
 
   useEffect(() => {
     if (session) {
-      navigate("/protected");
+      navigate("/dashboard");
     }
   }, [session, navigate]);
 
@@ -82,7 +82,7 @@ export function AuthPage() {
             <Tabs defaultValue="login" className="w-full">
               <div className="flex flex-col items-center gap-2 mb-2 text-center">
                 <img src="/logo.png" alt="logo" width={150} height={150} />
-                <h1 className="text-2xl font-bold text-foreground">Acme Inc</h1>
+                <h1 className="text-2xl font-bold text-foreground">NewTerra Inc</h1>
                 <p className="text-muted-foreground font-medium">
                   Bringing the world together
                 </p>

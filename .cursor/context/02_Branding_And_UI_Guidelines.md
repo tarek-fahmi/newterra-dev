@@ -9,27 +9,6 @@
 - Minimum size: 120px width to maintain legibility
 - Clear space: Maintain padding equal to height of "N" around logo
 
-### Color Palette
-
-#### Primary Colors
-
-- **Forest Green** `#1B512D` - Primary brand color, used for main elements
-- **Sage** `#7FAD7F` - Secondary color, used for accents and highlights
-- **Earth Brown** `#5E4B3E` - Tertiary color, used sparingly for contrast
-
-#### Secondary Colors
-
-- **Sky Blue** `#A4CBEA` - Used for interactive elements and links
-- **Soft Yellow** `#F7EFB2` - Used for warnings and notifications
-- **Coral** `#FF7F5E` - Used for errors and critical actions
-
-#### Neutral Colors
-
-- **Charcoal** `#333333` - Used for main text
-- **Slate** `#666666` - Used for secondary text
-- **Light Gray** `#CCCCCC` - Used for borders and dividers
-- **Off-White** `#F8F8F5` - Used for backgrounds
-
 ### Typography
 
 #### Headings
