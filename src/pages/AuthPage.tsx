@@ -72,18 +72,18 @@ export function AuthPage() {
   }, [session, navigate]);
 
   return (
-    <div className="grid min-h-svh lg:grid-cols-2 bg-black">
+    <div className="grid min-h-svh lg:grid-cols-2 bg-charcoal">
       <div className="flex flex-col gap-4 p-6 md:p-10 bg-primary/70">
         <Link to="/" className="text-secondary hover:underline">
           Home
         </Link>
         <div className="flex flex-1 items-center justify-center">
-          <div className="w-full max-w-md p-8 pb-18 pt-12 rounded-md shadow-md bg-white">
+          <div className="w-full max-w-md p-8 pb-18 pt-12 rounded-lg shadow-md bg-card">
             <Tabs defaultValue="login" className="w-full">
               <div className="flex flex-col items-center gap-2 mb-2 text-center">
                 <img src="/logo.png" alt="logo" width={150} height={150} />
-                <h1 className="text-2xl font-bold text-primary">Acme Inc</h1>
-                <p className="text-primary opacity-80 font-medium">
+                <h1 className="text-2xl font-bold text-foreground">Acme Inc</h1>
+                <p className="text-muted-foreground font-medium">
                   Bringing the world together
                 </p>
               </div>
@@ -161,7 +161,7 @@ export function AuthPage() {
           </div>
         </div>
       </div>
-      <div className="relative hidden bg-muted lg:block">
+      <div className="relative hidden bg-background lg:block">
         <img
           src="/image.avif"
           alt="Image"

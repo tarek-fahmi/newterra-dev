@@ -33,7 +33,7 @@ export const SessionProvider = ({ children }: Props) => {
     return () => {
       authStateListener.data.subscription.unsubscribe();
     };
-  }, [supabase]);
+  }, []);
 
   return (
     <SessionContext.Provider value={{ session }}>

@@ -47,12 +47,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 const LandingPage = () => {
   const { session } = useSession();
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Header/Navigation */}
-      <header className="bg-gradient-to-r from-zinc-600 to-zinc-700 text-white">
+      <header className="bg-gradient-to-r from-primary to-primary text-primary-foreground">
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold">ACME INC</div>
+            <div className="text-2xl font-bold">NewTerra</div>
 
             {/* Desktop Navigation */}
             <NavigationMenu className="hidden md:flex">
@@ -61,7 +61,7 @@ const LandingPage = () => {
                   {session?.user ? (
                     <Button
                       variant="secondary"
-                      className="text-zinc-600 hover:bg-zinc-100"
+                      className="text-primary hover:bg-card"
                       onClick={() => {
                         supabase.auth.signOut();
                       }}
@@ -72,7 +72,7 @@ const LandingPage = () => {
                     <Link to="/auth">
                       <Button
                         variant="secondary"
-                        className="text-zinc-600 hover:bg-zinc-100"
+                        className="text-primary hover:bg-card"
                       >
                         Sign In
                       </Button>
@@ -86,7 +86,7 @@ const LandingPage = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden text-white"
+              className="md:hidden text-primary-foreground"
             >
               <Menu className="h-6 w-6" />
             </Button>
@@ -95,21 +95,21 @@ const LandingPage = () => {
           {/* Hero Section */}
           <div className="flex flex-col md:flex-row items-center py-16 gap-8">
             <div className="md:w-1/2">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Innovate. Transform. Succeed.
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary-foreground">
+                Empowering Smart Agriculture
               </h1>
-              <p className="text-xl mb-8">
-                Empowering businesses with cutting-edge solutions since 1998.
+              <p className="text-xl mb-8 text-muted-foreground">
+                Transform your farm operations with cutting-edge digital solutions for real-time monitoring, precision agriculture, and data-driven decision making.
               </p>
               <div className="flex space-x-4">
                 <Button variant="secondary" asChild>
-                  <Link to="/auth">Get Started</Link>
+                  <Link to="/auth">Start Your Digital Farm Journey</Link>
                 </Button>
               </div>
             </div>
             <div className="md:w-1/2 mt-8 md:mt-0">
-              <div className="bg-zinc-200 bg-opacity-30 border border-zinc-300 border-opacity-50 rounded-xl h-64 md:h-80 w-full flex items-center justify-center">
-                <p className="text-zinc-900">Hero Image Placeholder</p>
+              <div className="bg-muted bg-opacity-30 border border-border border-opacity-50 rounded-xl h-64 md:h-80 w-full flex items-center justify-center">
+                <p className="text-foreground">Smart Farm Dashboard Preview</p>
               </div>
             </div>
           </div>
@@ -117,66 +117,61 @@ const LandingPage = () => {
       </header>
 
       {/* Features Section */}
-      <section id="features" className="py-16 bg-white">
+      <section id="features" className="py-16 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-            Why Choose Acme Inc?
+          <h2 className="text-3xl font-bold text-center mb-12 text-primary">
+            Why Choose NewTerra?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FeatureCard
               icon={<Rocket size={24} />}
-              title="Lightning Fast"
-              description="Our solutions are optimized for performance, ensuring you get results quickly."
+              title="Real-Time Monitoring"
+              description="Monitor your farm operations in real-time with integrated IoT sensors and automated data collection systems."
             />
             <FeatureCard
               icon={<ShieldAlert size={24} />}
-              title="Secure & Reliable"
-              description="Bank-level security protocols to keep your data safe and your business running."
+              title="Compliance & Security"
+              description="Automated compliance reporting and secure data management to meet regulatory requirements and protect your farm data."
             />
             <FeatureCard
               icon={<ChartBar size={24} />}
-              title="Data-Driven"
-              description="Make informed decisions with our advanced analytics and reporting tools."
+              title="Precision Agriculture"
+              description="Optimize crop yields and resource allocation with advanced analytics, forecasting, and precision farming technologies."
             />
             <FeatureCard
               icon={<User size={24} />}
-              title="Customer Focused"
-              description="24/7 support and a team dedicated to your success every step of the way."
+              title="Expert Support"
+              description="Dedicated agricultural technology specialists providing 24/7 support and guidance for your farming operations."
             />
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 bg-gray-50">
+      <section id="about" className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
-              <div className="bg-zinc-100 rounded-xl h-64 md:h-80 w-full flex items-center justify-center text-zinc-500">
-                About Image Placeholder
+              <div className="bg-muted rounded-xl h-64 md:h-80 w-full flex items-center justify-center text-muted-foreground">
+                Agricultural Technology Solutions
               </div>
             </div>
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold mb-6 text-gray-800">
-                About Acme Inc
+              <h2 className="text-3xl font-bold mb-6 text-primary">
+                About NewTerra
               </h2>
-              <p className="text-gray-600 mb-4">
-                Founded in 1998, Acme Inc has been at the forefront of
-                innovation for over two decades. We've helped thousands of
-                businesses transform their operations and achieve unprecedented
-                growth.
+              <p className="text-muted-foreground mb-4">
+                Based in Camperdown, New South Wales, NewTerra is a leading digital business information systems integrator specializing in tailored solutions for farmers and agricultural businesses across Australia.
               </p>
-              <p className="text-gray-600 mb-6">
-                Our team of experts brings together diverse skills and
-                experiences to deliver solutions that are not just effective,
-                but revolutionary.
+              <p className="text-muted-foreground mb-6">
+                We focus on enhancing farm operational efficiency through real-time monitoring, precision agriculture technologies, and integrated digital platforms that enable crop yield optimization, resource allocation, and comprehensive financial management.
               </p>
               <Button
                 variant="outline"
-                className="border-zinc-600 text-zinc-600 hover:bg-zinc-600 hover:text-white"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 asChild
               >
-                <Link to="/about">Learn Our Story</Link>
+                <Link to="/about">Learn About Our Mission</Link>
               </Button>
             </div>
           </div>
@@ -184,28 +179,26 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 bg-white">
+      <section id="testimonials" className="py-16 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-            What Our Clients Say
+          <h2 className="text-3xl font-bold text-center mb-12 text-primary">
+            What Our Farmers Say
           </h2>
           <div className="max-w-3xl mx-auto">
             <Card>
               <CardContent className="p-8">
-                <p className="text-lg text-gray-600 mb-4">
-                  "Acme Inc transformed our business processes and helped us
-                  achieve 200% growth in just one year. Their team's dedication
-                  and expertise made all the difference."
+                <p className="text-lg text-muted-foreground mb-4">
+                  "NewTerra's integrated digital platform transformed our farming operations completely. We've seen a 35% increase in crop yields and significantly reduced resource waste through their precision agriculture solutions."
                 </p>
                 <div className="flex items-center">
                   <Avatar>
-                    <AvatarFallback className="bg-gray-300 text-gray-600">
-                      JS
+                    <AvatarFallback className="bg-muted text-muted-foreground">
+                      MW
                     </AvatarFallback>
                   </Avatar>
                   <div className="ml-4">
-                    <p className="font-bold text-gray-800">Jane Smith</p>
-                    <p className="text-gray-600">CEO of TechForward</p>
+                    <p className="font-bold text-primary">Michael Williams</p>
+                    <p className="text-muted-foreground">Owner, Williams Family Farm</p>
                   </div>
                 </div>
               </CardContent>
@@ -215,12 +208,12 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
+      <footer className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">ACME INC</h3>
-              <p className="text-gray-400">Innovate. Transform. Succeed.</p>
+              <h3 className="text-xl font-bold mb-4">NewTerra</h3>
+              <p className="text-muted-foreground">Empowering Smart Agriculture Through Digital Innovation</p>
             </div>
             <div>
               <h4 className="text-lg font-medium mb-4">Company</h4>
@@ -228,7 +221,7 @@ const LandingPage = () => {
                 <li>
                   <Link
                     to="/about"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
                     About Us
                   </Link>
@@ -236,7 +229,7 @@ const LandingPage = () => {
                 <li>
                   <Link
                     to="/careers"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
                     Careers
                   </Link>
@@ -244,7 +237,7 @@ const LandingPage = () => {
                 <li>
                   <Link
                     to="/contact"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
                     Contact
                   </Link>
@@ -256,26 +249,26 @@ const LandingPage = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    to="/solutions/enterprise"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    to="/solutions/precision-agriculture"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
-                    Enterprise
+                    Precision Agriculture
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/solutions/small-business"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    to="/solutions/farm-monitoring"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
-                    Small Business
+                    Farm Monitoring
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/solutions/startup"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    to="/solutions/compliance-reporting"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
-                    Startup
+                    Compliance Reporting
                   </Link>
                 </li>
               </ul>
@@ -286,40 +279,41 @@ const LandingPage = () => {
                 <li>
                   <Link
                     to="/blog"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
-                    Blog
+                    Agricultural Insights
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/guides"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
-                    Guides
+                    Implementation Guides
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/webinars"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-muted-foreground hover:text-primary-foreground transition-colors"
                   >
-                    Webinars
+                    Farm Tech Webinars
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <Separator className="my-8 bg-gray-700" />
+          <Separator className="my-8 bg-muted" />
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">
-              &copy; {new Date().getFullYear()} Acme Inc. All rights reserved.
+            <p className="text-muted-foreground">
+              &copy; {new Date().getFullYear()} NewTerra. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-primary-foreground transition-colors"
               >
+                {/* Social Icon 1 */}
                 <svg
                   className="h-6 w-6"
                   fill="currentColor"
@@ -335,8 +329,9 @@ const LandingPage = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-primary-foreground transition-colors"
               >
+                {/* Social Icon 2 */}
                 <svg
                   className="h-6 w-6"
                   fill="currentColor"
@@ -348,8 +343,9 @@ const LandingPage = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-primary-foreground transition-colors"
               >
+                {/* Social Icon 3 */}
                 <svg
                   className="h-6 w-6"
                   fill="currentColor"
@@ -365,8 +361,9 @@ const LandingPage = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-primary-foreground transition-colors"
               >
+                {/* Social Icon 4 */}
                 <svg
                   className="h-6 w-6"
                   fill="currentColor"
